@@ -1,7 +1,9 @@
 nobodies-for.bots
 =================
 
-{{TOC}}
+* [Intro](#intro)
+* [Reading List](#reading-list)
+* [Setup](#setup)
 
 ## Intro
 
