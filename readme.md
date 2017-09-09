@@ -9,7 +9,7 @@ nobodies-for.bots
 
 How would you chat to a bot if it wasn’t optimised for human natural language interaction?
 
-`nobodies.for-bots` is a full day masterclass part of [Nederlands Film Festival Interactive: Storyspace](https://www.filmfestival.nl/profs_nl/nff-interactive-storyspace/) (27-28 September 2017, Utrecht). Participants experiment in chatting with bots shaped in a language based upon initial human user input, which are then swapped between groups, so you don’t talk with just some version of yourself. The intent is to ‘make oneself understood’ by bots, rather than the other way around.
+`nobodies.for-bots` is a full day masterclass part of the [Nederlands Film Festival Interactive: Storyspace](https://www.filmfestival.nl/profs_nl/nff-interactive-storyspace/) (27-28 September 2017, Utrecht). Participants experiment in chatting with bots shaped in a language based upon initial human user input, which are then swapped between groups, so you don’t talk with just some version of yourself. The intent is to ‘make oneself understood’ by bots, rather than the other way around.
 
 It’s like turning inside out human-centric user friendliness and fully embracing pan-usership!
 
