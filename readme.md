@@ -1,5 +1,7 @@
-nobodies for bots
+nobodies-for.bots
 =================
+
+{{TOC}}
 
 ## Intro
 
@@ -9,7 +11,13 @@ How would you chat to a bot if it wasn’t optimised for human natural language 
 
 It’s like turning inside out human-centric user friendliness and fully embracing pan-usership!
 
-## Reading list
+## Reading List
+
+Here we collect all reference material for the workshop  
+
+→ [nobodies-for.bots](https://www.are.na/andre-fincato/nobodies-for-bots)  
+
+* * *
 
 The chatbot has a long history, starting with [Eliza in 1966](https://futurism.com/images/the-history-of-chatbots-infographic). Chatbots are quickly developing in traditional forms like the text-based chat message boxes to aural and physical manifestations: the chatbot as conversational across many formats, aurally (eg. Alexa by Amazon) and physically ([Paro](https://en.wikipedia.org/wiki/Paro_(robot)), a therapeutic Robot), meant to provide an interface to the system for humans (eg you can talk to it, write to it, push a button to trigger an action, and so forth). These developments are happening in marketing, entertainment, from everyday task management to long-term care. 
 
