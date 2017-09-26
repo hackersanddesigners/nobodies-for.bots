@@ -50,6 +50,79 @@ print 'Registering...'
 s.sendall('NICK %s\r\n'%(NICK))
 s.sendall("USER %s * * :aff-ect's companion species\r\n"%(NICK))
 
+#-- nktk
+file = 'input-text.txt'
+with open(file) as fp:
+  txi = fp.readlines()
+  
+  JJ = []
+  NN = []
+  NNP = []
+  RB = []
+  DT = []
+  VB = []
+  VBZ = []
+  VBP = []
+  VBD = []
+  TO = []
+  CC = []
+  MD = []
+  PRPS = []
+  IN = []
+
+  for line in txi:
+    line = line.decode('utf8')
+    tokens = nltk.word_tokenize(line)
+    tags = nltk.pos_tag(tokens)
+    print (tags)
+
+    for pair in tags:
+      tag = pair[1]
+      tok = pair[0]
+      if tag == 'JJ':
+        JJ.append(tok)
+      elif tag == 'NN':
+        NN.append(tok)
+      elif tag == 'NNP':
+        NNP.append(tok)
+      elif tag == 'RB':
+        RB.append(tok)
+      elif tag == 'DT':
+        DT.append(tok)
+      elif tag == 'VB':
+        VB.append(tok)
+      elif tag == 'VBZ':
+        VBZ.append(tok)
+      elif tag == 'VBP':
+        VBP.append(tok)
+      elif tag == 'VBD':
+        VBD.append(tok)
+      elif tag == 'TO':
+        TO.append(tok)
+      elif tag == 'CC':
+        CC.append(tok)
+      elif tag == 'MD':
+        MD.append(tok)
+      elif tag == 'PRP$':
+        PRPS.append(tok)
+      elif tag == 'IN':
+        IN.append(tok)
+
+    print JJ, len(JJ)
+    print NN, len(NN)
+    print NNP, len(NNP)
+    print RB, len(RB)
+    print DT, len(DT)
+    print VB, len(VB)
+    print VBZ, len(VBZ)
+    print VBP, len(VBP)
+    print VBD, len(VBD)
+    print TO, len(TO)
+    print CC, len(CC)
+    print MD, len(MD)
+    print PRPS, len(PRPS)
+    print IN, len(IN)
+
 connected = False
 def got_msg(msg):
   print msg
