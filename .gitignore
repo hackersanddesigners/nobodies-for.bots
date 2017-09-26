@@ -1,9 +1,9 @@
 # ahem
 nff-program.pdf
-eliza.py
 aanmeldingen.xlsx
 
 # python
 /env
+/IRCLogBot
 *.pyc
 

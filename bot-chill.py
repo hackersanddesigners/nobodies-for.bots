@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: UTF-8 =-*-
+# -*- coding: utf-8 -*-
 
 import socket
 import select
@@ -7,7 +7,6 @@ import random
 import ssl
 import sys
 import time
-from jokes import jokes
 
 if len(sys.argv) != 5:
   print "Usage: python %s <host> <channel> (no need for '#')> [--ssl|--plain] <nick>"
@@ -62,6 +61,6 @@ def got_msg(msg):
     connected = True
     s.sendall('JOIN %s\r\n'%(CHANNEL))
     print 'Joining ☺︎'
-  elif words[1] == 'PRIVMSG' and words[2] == CHANNEL and '!joke' in words[3] and connected:
-    s.sendall('PRIVMSG %s :'%(CHANNEL) + random.choice(jokes) + '\r\n')
+  elif words[1] == 'PRIVMSG' and words[2] == CHANNEL and '!' in list(words[3:]) and connected:
+    s.sendall('PRIVMSG %s :'%(CHANNEL) + 'chill mate\r\n')
 read_loop(got_msg)
