@@ -67,7 +67,7 @@ Understanding the differences between chatbots, artificial intelligence, languag
 
 ## Setup
 
-1. download and install a text-editor ([atom](https://atom.io), [visual studio code](https://code.visualstudio.com)
+1. download and install a text-editor ([atom](https://atom.io), [visual studio code](https://code.visualstudio.com), etc.)
 2. `git clone git@github.com:hackersanddesigners/nobodies-for.bots.git` or [download the github repo](https://github.com/hackersanddesigners/nobodies-for.bots/archive/master.zip)
 3. set up a python:
 	- install `xcode`: `xcode-select --install` ([ref](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/))
