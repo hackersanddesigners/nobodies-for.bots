@@ -110,18 +110,18 @@ with open(file) as fp:
 
     print JJ, len(JJ)
     print NN, len(NN)
-    print NNP, len(NNP)
-    print RB, len(RB)
-    print DT, len(DT)
-    print VB, len(VB)
-    print VBZ, len(VBZ)
-    print VBP, len(VBP)
-    print VBD, len(VBD)
-    print TO, len(TO)
-    print CC, len(CC)
-    print MD, len(MD)
-    print PRPS, len(PRPS)
-    print IN, len(IN)
+    # print NNP, len(NNP)
+    # print RB, len(RB)
+    # print DT, len(DT)
+    # print VB, len(VB)
+    # print VBZ, len(VBZ)
+    # print VBP, len(VBP)
+    # print VBD, len(VBD)
+    # print TO, len(TO)
+    # print CC, len(CC)
+    # print MD, len(MD)
+    # print PRPS, len(PRPS)
+    # print IN, len(IN)
 
 connected = False
 def got_msg(msg):
@@ -140,8 +140,32 @@ def got_msg(msg):
   elif words[1] == 'PRIVMSG' and words[2] == CHANNEL and connected:
     chat = ' '.join(words[3:])
     tok = nltk.word_tokenize(chat)
-    tokens = str(tok[1:])
-    tag = nltk.pos_tag(tok)
-    tagged = str(tag[1:])
-    s.sendall('PRIVMSG %s :'%(CHANNEL) + tagged + '\r\n')
+    tokens = tok[1:]
+    print str(tokens), '**'
+    tags = nltk.pos_tag(tokens)
+
+    JJc = []
+    NNc = []
+    NNPc = []
+
+    for pair in tags:
+      tag = pair[1]
+      value = pair[0]
+      if tag == 'JJ':
+        JJc.append(value)
+      elif tag == 'NN':
+        NNc.append(value)
+      elif tag == 'NNP':
+        NNPc.append(value)
+
+    print JJc, len(JJc)
+    if len(JJc) > 3 and len(JJ) > 15:
+      s.sendall('PRIVMSG %s :'%(CHANNEL) + 'a lot of adjectives\r\n')
+    else:
+      s.sendall('PRIVMSG %s :'%(CHANNEL) + 'a terse text\r\n')
+
+    if len(tokens) < 3:
+      s.sendall('PRIVMSG %s :'%(CHANNEL) + '😶\r\n')
+      print str(tokens), '--+++---'
+
 read_loop(got_msg)
