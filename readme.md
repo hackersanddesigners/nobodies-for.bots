@@ -74,4 +74,5 @@ Understanding the differences between chatbots, artificial intelligence, languag
 	- install `homebrew`: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` ([ref](https://brew.sh/))
 	- setup `PATH`: add `export PATH=/usr/local/bin:/usr/local/sbin:$PATH` to `~/.profile` ([ref](http://docs.python-guide.org/en/latest/starting/install/osx/))
 	- install `python 2.7`: `brew install python`
-4. run `irc.py` to test everything works as expected: `python irc.py`
+4. run `python` to test everything works as expected: `python`
+5. install `nltk`: `pip install nltk`
