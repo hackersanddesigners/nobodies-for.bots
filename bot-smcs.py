@@ -9,7 +9,6 @@ import random
 import ssl
 import sys
 import time
-from jokes import jokes
 
 if len(sys.argv) != 5:
   print "Usage: python %s <host> <channel> (no need for '#')> [--ssl|--plain] <nick>"
@@ -52,7 +51,7 @@ s.sendall('NICK %s\r\n'%(NICK))
 s.sendall("USER %s * * :aff-ect's companion species\r\n"%(NICK))
 
 #-- nktk
-file = 'urbit.txt'
+file = 'input-text.txt'
 with open(file) as fp:
   txi = fp.readlines()
   
