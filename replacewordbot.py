@@ -9,7 +9,8 @@ import random
 import ssl
 import sys, os
 import time
-from ellen import ellen
+import re
+from nltk.corpus import wordnet
 
 if len(sys.argv) != 5:
   print "Usage: python %s <host> <channel> (no need for '#')> [--ssl|--plain] <nick>"
@@ -59,6 +60,15 @@ def send(x):
 def display(x):
     send("PRIVMSG %s :%s"%(CHANNEL, x))
 
+def replace_keep_case(word, replacement, text):
+    def func(match):
+        g = match.group()
+        if g.islower(): return replacement.lower()
+        if g.istitle(): return replacement.title()
+        if g.isupper(): return replacement.upper()
+        return replacement
+    return re.sub(word, func, text, flags=re.I)
+
 def got_msg(msg):
   print msg
   global connected
@@ -71,12 +81,18 @@ def got_msg(msg):
     connected = True
     s.sendall('JOIN %s\r\n'%(CHANNEL))
     print 'Joining ☺︎'
-  elif words[1] == 'PRIVMSG' and words[2] == CHANNEL and 'programming' in words[3] and connected:
-    display(random.choice(ellen))
-  elif words[1] == 'PRIVMSG' and words[2] == CHANNEL and 'programming' in words and connected:
-    display(random.choice(ellen))
-  # elif words[1] == 'PRIVMSG' and words[2] == CHANNEL and connected:
-  #       display("test")
+  elif words[1] == 'PRIVMSG' and words[2] == CHANNEL and connected:
+      words[3]=words[3].replace(':','')
+      words = words[3:]
+      synonymlist=[]
+      for part in words:
+        #   newsentence=synonymlist.append(wordnet.synset("'"+part+".n.01'"))
+          syn = wordnet.synsets(part)
+          newword=syn[0].lemmas()[0].name()
+          synonymlist.append(newword)
+          display(synonymlist)
+        #   display(syn.lemma_names[1])
+    #   display(" ".join(newsentence))
 
 
 read_loop(got_msg)
